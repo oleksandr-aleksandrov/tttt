@@ -39,3 +39,8 @@
 .header-bar .social-networks li a {
   color: #214d8f;
 }
+
+footer {
+  background-color: #214d8f;
+  padding: 20px 0;
+}
