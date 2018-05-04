@@ -1,1 +1,30 @@
 $main-color: #214d8f;
+$white-color: #fff;
+$encode-font: 'Encode Sans Condensed', sans-serif;
+$teko-font: 'Teko', sans-serif;
+.white-color {
+  color: $white-color;
+}
+
+.width-1-1 {
+  width: 100%;
+}
+
+body {
+  font-family: $encode-font;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #232323;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $teko-font;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.d-flex {
+  display: flex;
+}

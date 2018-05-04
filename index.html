@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
 
-    <!-- Bootstrap -->
+    <title></title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="app/css/main.css">
 
@@ -24,7 +25,7 @@
 <header>
     <div class="container">
         <div class="row">
-            <div class="header-bar">
+            <div class="header-bar col-md-12">
                 <ul class="social-networks">
                     <li>
                         <a href="#" target="_blank">
@@ -47,8 +48,8 @@
                         </a>
                     </li>
                 </ul>
-                <a href="">
-                    <img class="header-logo" src="https://www.freelogodesign.org/img/logo-ex-7.png" alt="">
+                <a href="#">
+                    <img class="header-logo" src="app/images/bocabio_logo%20copy.jpg" alt="">
                 </a>
 
                 <a class="search-link" href="#">
@@ -56,9 +57,11 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="container-fluid">
         <div class="row">
-            <nav class="main-navigation">
-                <ul class="nav navbar-nav">
+            <nav id="mainNavigation" class="main-navigation col-md-12">
+                <ul class="text-uppercase text-center">
                     <li>
                         <a href="#">home</a>
                     </li>
@@ -85,114 +88,181 @@
         </div>
     </div>
 </header>
-
 <main>
-
-    <div class="container">
-        <div class="row">
-
-        </div>
-        <div class="row">
-            <div id="newsWrapper">
-                <!--<div class="col-md-4">-->
-                <!--<img width="200" src="./app/images/23.jpg" alt="">-->
-                <!--<data>-->
-                <!--22 apr 2018-->
-                <!--</data>-->
-                <!--<h2>-->
-                <!--BOCA BIOLISTICS ACHIEVES ISO 13485 ACCREDITATION!-->
-                <!--</h2>-->
-                <!--<p>-->
-                <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias cupiditate, dolor ea-->
-                <!--eos-->
-                <!--error, hic illo inventore ipsa libero maxime minima molestias neque pariatur perspiciatis, sint-->
-                <!--unde-->
-                <!--vel vitae!-->
-                <!--</p>-->
-                <!--</div>-->
+    <section class="top-image">
+        <span class="overlay"></span>
+        <div class="container floating-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-uppercase white-color">news & videos</h1>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="news-section">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-uppercase text-center">what`s been happening lately at boca boi?</h2>
+                <div class="big-news col-md-12">
+                    <img class="img-responsive" src="app/images/627290560.jpg" alt="">
+                    <time class="news-data">12 apr 2018</time>
+                    <h3 class="text-uppercase news-title"><a href="#">BOCA BIOLISTICS INVITES PARTICIPANTS TO JOIN ZIKA
+                        VIRUS
+                        STUDY </a></h3>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid beatae cupiditate
+                        delectus ducimus, error ex explicabo facilis ipsa laborum magnam magni minima necessitatibus
+                        quibusdam rem sequi soluta ut vitae.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid beatae cupiditate
+                        delectus ducimus, error ex explicabo facilis ipsa laborum magnam magni minima necessitatibus
+                        quibusdam rem sequi soluta ut vitae.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div id="newsWrapper">
+                    <div class="news-item col-md-4">
+                        <img class="img-responsive" src="./app/images/523393982800.jpg" alt="">
+                        <time class="news-data">12 apr 2018</time>
+                        <h3 class="overflow-title">
+                            <a href="#"> BOCA BIOLISTICS ACHIEVES ISO 13485 ACCREDITATION!</a>
+                        </h3>
+                        <hr>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias cupiditate, dolor
+                            ea
+                            eos
+                            error, hic illo inventore ipsa libero maxime minima molestias neque pariatur perspiciatis,
+                            sint
+                            unde
+                            vel vitae!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section-newsletter">
         <div class="container">
             <div class="row">
-                <h2>newsletter</h2>
-                <form action="">
-                    <input type="text">
-                    <input type="text">
-                </form>
-                <button type="button" class="btn btn-default">Left</button>
+                <div class="col-md-12">
+                    <div class="newsletter-wrapper row">
+                        <div class="col-md-4">
+                            <h2 class="text-uppercase">newsletter sign up</h2>
+                        </div>
+                        <div class="col-md-8">
+                            <form class="newsletter-form" action="">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <input type="text" class="newsletter-form-item"
+                                               placeholder="First name" required>
+                                    </div>
+                                    <div class="col-md-5">
+
+                                        <input type="email" class="newsletter-form-item"
+                                               placeholder="Email Address" required>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="newsletter-form-submit btn width-1-1">submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </main>
 
-
 <footer>
     <div class="container">
-        <div class="row">
-            <img src="" alt="">
+        <div class="text-center row">
+            <img class="footer-logo" src="app/images/bocabio_logo%20copy%202.png" alt="">
         </div>
-        <div class="row">
+        <nav class="footer-navigation row">
             <div class="col-md-5">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3>Site Map</h3>
-                        <ul>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
+                        <h2 class="text-uppercase">Site Map</h2>
+                        <ul class="text-uppercase footer-list-item">
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                        <h3>Site Map</h3>
-                        <ul>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
+                        <h2 class="text-uppercase"> PRODUCTS & SERVICES </h2>
+                        <ul class="text-uppercase footer-list-item">
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
+                            <li><a href="">COMPANY OVERVIEW</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-5 col-md-offset-2">
-                <div class="row">
+                <div class="row d-flex">
                     <div class="col-md-6">
-                        <h3>Site Map</h3>
-                        <ul>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
+                        <h2 class="text-uppercase">CONTACT</h2>
+                        <ul class="text-uppercase footer-list-item contact-list">
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <a href="">Boca Biolistics</a>
+                                <p>5001 NW 13TH AVENUE, BAY H
+                                    POMPANO BEACH, FL 33064 </p>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <a href="tel:954-449-6126">954-449-6126</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:SALES@BOCABIO.COM">SALES@BOCABIO.COM</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-skype" aria-hidden="true"></i>
+                                <a href="skype:BOCABIO?call">OUR SKYPE NAME IS BOCABIO </a>
+                            </li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
-                        <h3>Site Map</h3>
-                        <ul>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
-                            <li><a href="">asdas</a></li>
+                    <div class="col-md-6 followus">
+
+                        <ul class="social-networks">
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                            </li>
                         </ul>
+                        <h2 class="text-uppercase">follow us</h2>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <p>copiright (c)</p>
+        </nav>
+        <div class="text-center row footer-copyright">
+            <p>Copyright © 2018 Boca Biolistics. All rights reserved. </p>
         </div>
     </div>
 </footer>

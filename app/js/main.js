@@ -2,17 +2,17 @@
     var listOfNews = new newsList();
 
     function newsList() {
-        this.showTo = function(newsList, startNumber, finishNumber){
+        this.showTo = function (newsList, startNumber, finishNumber) {
             $('#newsWrapper').empty();
             console.log('shgowto');
 
-            newsList.forEach(function(article) {
+            newsList.forEach(function (article) {
                 const newsItem = $('<div/>', {
                     class: 'col-md-4'
                 });
                 console.log(article);
                 const title = '<h2>' + article.title + '</h2>';
-                const image = '<img width="100" src="' + article.img +'"></img>';
+                const image = '<img width="100" src="' + article.img + '"></img>';
                 const excerpt = '<p>' + article.excerpt + '</p>';
                 const date = '<p>' + article.date + '</p>';
                 newsItem.append(title).append(image).append(excerpt).append(date);
@@ -47,5 +47,12 @@
             listOfNews.showTo(newsList);
         }
     });
+
+
+    $("#mainNavigation ul li a").click(function (e) {
+        e.preventDefault();
+        $("#mainNavigation ul li a").removeClass('active');
+        $(this).addClass('active');
+    })
 
 })(jQuery);
