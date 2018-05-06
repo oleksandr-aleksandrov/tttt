@@ -329,7 +329,7 @@ footer .social-networks li a {
 }
 
 .news-section p {
-  max-height: 100px;
+  max-height: 110px;
   overflow: hidden;
   -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
