@@ -474,6 +474,12 @@ footer .social-networks li a {
   background-color: #173766;
 }
 
+.newsletter-form .text-error {
+  color: red;
+  position: absolute;
+  bottom: -27px;
+}
+
 /* --== /NEWSLETTER SECTION ==-- */
 @media only screen and (max-width: 1000px) {
   body {

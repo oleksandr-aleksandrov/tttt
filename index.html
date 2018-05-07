@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,700,800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="app/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/css/main.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -119,25 +119,7 @@
                 </div>
             </div>
             <div class="row">
-                <div id="newsWrapper">
-                    <div class="news-item col-md-4">
-                        <img class="img-responsive" src="./app/images/523393982800.jpg" alt="">
-                        <time class="news-data">12 apr 2018</time>
-                        <h3 class="overflow-title">
-                            <a href="#"> BOCA BIOLISTICS ACHIEVES ISO 13485 ACCREDITATION!</a>
-                        </h3>
-                        <hr>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias cupiditate, dolor
-                            ea
-                            eos
-                            error, hic illo inventore ipsa libero maxime minima molestias neque pariatur perspiciatis,
-                            sint
-                            unde
-                            vel vitae!
-                        </p>
-                    </div>
-                </div>
+                <div id="newsWrapper"></div>
             </div>
         </div>
     </section>
@@ -150,19 +132,20 @@
                             <h2 class="text-uppercase">newsletter sign up</h2>
                         </div>
                         <div class="col-md-8">
-                            <form class="newsletter-form" action="">
+                            <form id="newsletterForm" class="newsletter-form" method="post" action="">
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <input type="text" class="newsletter-form-item"
+                                        <input type="text" name="name" id="newsletterName" class="newsletter-form-item"
                                                placeholder="First name" required>
                                     </div>
                                     <div class="col-md-5">
-
-                                        <input type="email" class="newsletter-form-item"
+                                        <input type="email" name="email" id="newsletterEmail"
+                                               class="newsletter-form-item"
                                                placeholder="Email Address" required>
                                     </div>
                                     <div class="col-md-2">
-                                        <button type="submit" class="newsletter-form-submit text-uppercase btn width-1-1">submit
+                                        <button type="submit" id="newsletterSubmit"
+                                                class="newsletter-form-submit text-uppercase btn width-1-1">submit
                                         </button>
                                     </div>
                                 </div>
@@ -173,6 +156,7 @@
             </div>
         </div>
     </section>
+
 </main>
 <footer>
     <div class="container">
@@ -265,8 +249,11 @@
         </div>
     </div>
 </footer>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="app/js/main.js"></script>

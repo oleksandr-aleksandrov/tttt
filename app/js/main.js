@@ -1,41 +1,82 @@
-(function ($) {
-    var listOfNews = new newsList();
-    var startNumProd = 0, finishNumProd = 10;
+(function ($, w, d) {
 
-    function newsList() {
-        this.items = [];
-        this.showTo = function (newsList) {
-            $('#newsWrapper').empty();
-            console.log('shgowto');
+    let startNumProd = 0,
+        bottomOffset = 300;
+    const list = [];
+    $.getJSON("app/data.json", function (data) {
 
-            newsList.forEach(function (article) {
-                const newsItem = $('<article/>', {
-                    class: 'news-item col-md-4'
-                });
-                // console.log(article);
-                const title = '<h3 class="overflow-title">' + article.title + '</h3>';
-                const image = '<img class="img-responsive" src="' + article.img + '"></img>';
-                const excerpt = '<p>' + article.excerpt + '</p>';
-                const date = '<time class="news-data">' + article.date + '</time>';
-                const hr = '<hr>';
-                newsItem.append(image).append(date).append(title).append(hr).append(excerpt);
-                $('#newsWrapper').append(newsItem);
-                // console.log('shgowto for');
+        for (key in data.article) {
+            const article = data.article[key];
+            list.push(article);
+        }
+        showProducts(list, startNumProd, startNumProd + 6);
+
+        startNumProd = startNumProd + 6;
+
+    });
+
+    function showProducts(array, begin, end) {
+        for (let i = begin; i < end; i++) {
+            const newsItem = $('<article/>', {
+                class: 'news-item col-md-4'
+            });
+            /**
+             *
+             */
+            const title = $('<h3/>', {
+                text: array[i].title,
+                class: 'overflow-title'
             });
 
-            return this;
+
+            /**
+             *
+             */
+            const image = $('<img/>', {
+                text: array[i].title,
+                class: 'img-responsive',
+                src: array[i].img
+            });
+            /**
+             *
+             */
+            const excerpt = $('<p/>', {
+                text: array[i].excerpt
+            });
+
+            /**
+             *
+             */
+            const date = $('<time/>', {
+                text: array[i].date,
+                class: 'news-data'
+            });
+
+            /**
+             *
+             */
+                //
+            const hr = $('<hr/>');
+
+            newsItem.append(image).append(date).append(title).append(hr).append(excerpt);
+            $('#newsWrapper').append(newsItem);
         }
 
     }
 
-    $.getJSON("app/data.json", function (data) {
-        // console.log(data);
-        const newsList = [];
-        for (key in data.article) {
-            const article = data.article[key];
-            newsList.push(article);
-            // console.log(article);
-            listOfNews.showTo(newsList, startNumProd, finishNumProd);
+
+    $(w).scroll(function () {
+        if ($(d).height() - $(w).height() - bottomOffset <= $(w).scrollTop()) {
+            if (startNumProd < list.length) {
+                if (startNumProd + 3 < list.length) {
+                    showProducts(list, startNumProd, startNumProd + 3);
+                    startNumProd = startNumProd + 3;
+                    $('.loader').show();
+                }
+                else {
+                    'NO NEWS';
+                }
+            }
         }
     });
 
@@ -46,6 +87,37 @@
         $(this).addClass('active');
     });
 
-    
 
-})(jQuery);
+    $('#newsletterForm').click('submit', function (event) {
+        console.log('asdasd');
+        if (validateForm()) { // если есть ошибки возвращает true
+            event.preventDefault();
+        }
+    });
+
+    function validateForm() {
+        $(".text-error").remove();
+
+        const newsletterName = $("#newsletterName");
+        if (newsletterName.val().trim().length < 4) {
+            var newsletterNameLogin = true;
+            newsletterName.after('<span class="text-error">This field is required</span>');
+        }
+        $("#newsletterName").addClass('error', newsletterNameLogin);
+
+
+        const reg = /^\w+([\.-]?\w+)*@(((([a-z0-9]{2,})|([a-z0-9][-][a-z0-9]+))[\.][a-z0-9])|([a-z0-9]+[-]?))+[a-z0-9]+\.([a-z]{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$/i;
+        const newsletterEmail = $("#newsletterEmail");
+        let newsletterEmailT = newsletterEmail.val().trim() ? false : true;
+
+        if (newsletterEmailT) {
+            newsletterEmail.after('<span class="text-error">A valid email address is required</span>');
+        } else if (!reg.test(newsletterEmail.val())) {
+            newsletterEmailT = true;
+            newsletterEmail.after('<span class="text-error">Invalid e-mail</span>');
+        }
+
+        return ( newsletterNameLogin || newsletterEmailT );
+    }
+
+})(jQuery, window, document);
