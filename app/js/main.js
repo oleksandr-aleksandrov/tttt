@@ -89,8 +89,7 @@
 
 
     $('#newsletterForm').click('submit', function (event) {
-        console.log('asdasd');
-        if (validateForm()) { // если есть ошибки возвращает true
+        if (validateForm()) {
             event.preventDefault();
         }
     });
